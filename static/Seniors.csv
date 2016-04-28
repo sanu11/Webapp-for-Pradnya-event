@@ -1,0 +1,1983 @@
+Question,Option 1,Option 2,Option 3,Option 4,Answer
+"#include<iostream>
+#define SQR(x) x*x;
+using namespace std;
+int main()
+{
+ int a0=2, a4=8, a7=SQR(a0+a4);
+ int *a5; a5=&a0;
+ int **a2=&a5;
+ int ***a3=&a2;
+ int ****a1 =&a3;
+ cout<< (****a1&***&**&a3^(**&**&**&a3=a7));
+ return 0;
+}",102,24,Compile Time Error,26,2
+"#include <iostream>
+using namespace std;
+#define print(x,y) cout<<y<<"" ""
+#define PRADNYA(x,y) (x^y&x^y&1)
+int main(int argc, char const *argv[])
+{
+ int arr1[][6]={1,2,3,6,5,6,9,9,1,6,5,6,1,2,3,6,5,6,1,2,3,7,9,6,6,5,6,1,2,3,2,4,3,6,5,6,1,2,3,6,5,6,8,7,5,6,5,6};
+ int arr2[10]={0xBAD};
+ arr2[5] = *(*(arr1+4)+3)&arr1[1][5];
+ arr2[7] = *(*(arr1+1)+1)^arr1[5][1];
+ arr2[1] = *(*(arr1+5)+5)|arr1[7][4];
+ arr2[9] = *(*(arr1+4)+5)<arr1[3][2];
+ arr2[3] = *(*(arr1+1)+2)|(arr1[1][3]|PRADNYA(*(*(arr1+1)+2),arr1[1][3]));
+ for(int i=0; i<10; i++)
+  print(0,arr2[i]);
+ return 0;
+}",2989 7 0 7 0 0 0 13 0 0,666568 7 0 7 0 0 0 13 0 1,666568 2 0 7 0 0 0 13 0 0,2989 2 0 7 0 0 0 13 0 1,1
+"#include <iostream>
+using namespace std;
+#define print(x,y) (cout<<y*8)
+void print_(int x, int val[][6])
+{
+ int average=0;
+ for(int i=0;i <8;i++)
+  for(int j=0; j<6; j++)
+   average+=val[i][j];
+ average = average/8;
+ print (x,average);
+}
+int main(int argc, char const *argv[])
+{
+ int arr1[][6]={1,2,3,6,5,6,1,2,3,6,5,6,1,2,3,6,5,6,1,2,3,6,5,6,1,2,3,6,5,6,1,2,3,6,5,6,1,2,3,6,5,6,1,2,3,6,5,6};
+ int *arr2[10];
+ arr2[5] = *(arr1+4)+3;
+ arr2[7] = *(arr1+1)+1;
+ arr2[1] = *(arr1+5)+5;
+ arr2[9] = *(arr1+4)+5;
+ arr2[2] = *(arr1+3)+2;
+ arr2[3] = *(arr1+8)+1;
+ arr2[8] = *(arr1+1)+6;
+ arr2[0] = *(arr1+3)+2;
+ arr2[6] = *(arr1+4)+1;
+ print_(6, arr1);
+ return 0;
+}",23,184,123656,Compile Time Error,2
+"#include <iostream>
+#include <string>
+using namespace std;
+typedef struct 
+{
+ long a; char q;
+ void fun(){
+  cout<<sizeof(a)+sizeof(q)<<"" "";
+ }
+}s;
+typedef union {
+ float f; double d;
+ void fun(){
+  cout<<sizeof(f)+sizeof(d)<<"" "";
+ }
+}c;
+class pradnya
+{
+public:
+ s c1; c s1;
+ string  str = ""WELCOME"";
+ pradnya(){
+  str = ""PICT"";
+ }
+ void fun(){
+  c1.fun(); s1.fun();
+  cout<<sizeof(c1)<<"" ""<<sizeof(s1)<<"" ""<<str.size();
+ }
+};
+int main(int argc, char const *argv[])
+{
+ pradnya p;
+ cout<<sizeof(p)<<"" "";p.fun(); 
+ return 0;
+}",3 12 3 12 7,3 12 3 8 4,3 12 4 8 4,3 12 4 12 7,3
+"#include<iostream>
+using namespace std;
+
+static short *arr, *brr;
+int main()
+{
+ arr = (short *)512;
+ brr = (short *)256;
+
+ cout<<(short)(arr | brr)<<endl;
+ return 0;
+}
+",768,Compile Time Error,Runtime Time Error,128,2
+"#include<iostream>
+using namespace std;
+int main()
+{
+ short a=(1<<16)+(1<<10);
+ short b = a <<1;
+ short c = b >>3;
+ short d = (b & c) >> 1;
+ short e = (b | c) >> 1;
+ cout<<d + e<<endl;
+}",1007,1324,1821,1152,4
+"#define MyChoicel 3
+#include<stdio.h>
+int main()
+{
+ char str[100];
+ void * var = (void *)sprintf(str,""\""%s""""Pradnya""""\"""""""""""",""Now"",""Time"","""",""LetsCelebrate"");
+
+ int MyChoice1 = 4;
+ if(!((unsigned int)var%(MyChoicel*2)))
+  printf(""Welcome"");
+ if(!((signed long) var%(MyChoice1*2)))
+  printf(""To"");
+ if(!((signed int)var%(MyChoicel*2)))
+  printf(""Event"");
+ return 0;
+}","Welcome
+To
+Event
+","Welcome
+Event
+","Welcome
+To",Error,4
+"#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+ int arr[3<<1][5<<6][1<<2][6<<3]={0};
+ for(int i=0; i<3<<1;i++)
+  for(int j=0; j<5<<6;j++)
+   for(int k=0; k<1<<2; k++)
+    for(int l=0; l<6<<3;l++)
+     arr[i][j][k][l] = (i*j*k*l)%(i+j+k+l+1);
+ cout<<(arr[3][4*4][5/2][6*6] | arr[1][98][1<<1][3<<2]);
+}",102,106,110,Compile Time Error,2
+"#include <stdio.h>
+int fun();
+int fun3(int *a)
+{
+        int i;
+        for(i=0;i<-1[a];i++)
+        fun();
+}
+int fun2()
+{
+        static int a=10;
+        return a++;
+}
+int fun()
+{
+if(fun2()%2==0)
+printf(""hello "");
+else
+printf(""world"");
+}
+int main() 
+{
+int a[]={1,2,3,4,5};        
+fun3(a+2);
+        return 0;
+}
+",hello world,hello hello,no output,hello,3
+"#include <stdio.h>
+int fun();
+int fun3(int *a)
+{
+        int i;
+        for(i=0;i<(-1)[a];i++)
+        fun();
+}
+int fun2()
+{
+        static int a=10;
+        return (a++,a++);
+}
+int fun()
+{
+if(fun2()%2==0)
+printf(""hello "");
+else
+printf(""world "");
+}
+int main() 
+{
+int a[]={1,2,3,4,5};        
+fun3(a+2);
+        return 0;
+}
+",no output,hello hello,hello world,world world,4
+"#include<stdio.h>
+#define __sq__(x) x*x
+enum { a,b,c,d=5,e};
+int main() 
+{
+int i=-1,j=-2,k;
+k=++i&&++j||++j;
+if(j&&k)        
+printf(c+""HelloWorld %d "",__sq__(e+2));
+else
+printf(b+""Pict"",__sq__(a+3));
+return 0;
+}",oWorld 20,lloWorld 20 ,t 11,ict ,2
+"#include <stdio.h>
+int main() {
+static int i,j;
+int a[][3][2]={10,4,12,1,8,6,7,5,9,2,11,3};
+int k=*(*(*(a+1)+1));
+while(i<10,j<20)
+        {
+        i++;
+        j++;
+        }
+        k++;
+        if(j&k)
+        printf(""%o %x "",i,k);
+        else
+        printf(""%o %x "",k,i);
+        return 0;
+}
+",12 10,12 a,3 a,12 14,4
+"#include <stdio.h>
+#include <string.h>
+int main(void) 
+{
+char a[]=""PICT Pune"",b[]=""Hello World"";  
+int arr[] = {0,3,5,0,10};
+        scanf(""%*s %[^e]"",a,b);                   //input is Live and Let Live
+int k=strlen(a);
+int l=strlen(b);
+int i=0;
+int temp=k&arr[2];
+int temp2=l&arr[1];
+        printf(""%d"",temp|temp2);
+return 0;
+}",1,6,3,7,4
+"   #include <stdio.h>
+   #include <stdlib.h>
+   #include <math.h>
+
+    int main()
+    {
+    int y, x = 5;
+        int array[][3] = { 0, 1, 2, 3, 4, 5 };
+    while( x --> 0 );{
+            y = x--;
+    }        
+    int k=abs(x)* *(*(array+1)+2);
+          printf(""%d %d %d\n"", (int)pow(k,abs(x)), (6, array[0,1][1,2]), y);
+        return 0;
+    }
+",100 6  -2,5  6   0,5   5   -1, 100 5 -1 ,4
+"#include <stdio.h>
+int main(void) 
+{
+int i=0;
+int array[] = { [0 ... 9] = 1, [10 ... 20] = 2, [30 ... 35] = 3, [35 ... 40]=4};
+int *x=array;
+int (*y)[4]=(array+20);
+int *q=y[2];
+q++;
+
+ *x =*x+*(q+1);
+ *(q+1) =*x-*(q+1);
+ *x =*x-*(q+1);
+q++;
+printf(""%d"",*x-*q); 
+return 0;
+}
+",6,3,2,-1,3
+"#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        printf(""%s %c %s \n"",*argv,*(*argv++),*++argv);
+}
+// argument given is College Life",./a.out . Life,Life C College ,Life L College,./a.out C Life,2
+"#include <stdio.h>
+#include <string.h>
+int main()
+{
+char (*temp)[4];
+char a[]=""%google.com%olacab%d%%%cab"";
+temp= (char(*)[4] ) strstr(a,""cab"");
+temp--;
+int x=10;
+char z='ABC';
+char str[10]="""";
+strcpy(str,(const char *) temp);
+printf(str,x,z,z);
+brk(0);
+}",12lacab67%Cab,acab10%Aab,acab10%%Cab,10lacab67%Cab,1
+"#include<stdio.h>
+#define int char
+main()
+{
+int i='a';
+for(;i<'A'+'A';i++)
+printf(""%d "",i);
+}
+
+",97 98 99.... 129,65 66 67 .... 193,Error,None of these ,4
+"Q.4 If 9435492 is the base index of array a,what will be the output:
+#include<stdio.h>
+int point(int*);
+int main()
+{
+ int a[10],*p,n=100;
+ p=&a[0];
+ p+=point(&n);
+ printf(""%d"",p);
+Return 0;
+}
+int point(int*x)
+{
+int a=100,c=20;
+float b=10.90;
+    *x=-a%c+a/b; 
+return *x;
+}",9435496,9435492,9435528,remains same,3
+"#include <iostream>
+ using namespace std;
+ int main()
+ {
+ char *arr[] = {""1234"", ""5678"", ""9012"", ""3456""};
+ char *(*ptr)[4] = &arr;
+ ++(*ptr)[2];
+ char *d=((*ptr)[2]++);
+ char *c=((*ptr-1)[4]);
+ int count=(int)*c;
+ if(*d-49)
+ {
+ int x=*d-47;
+ x++;
+ switch(x)
+ {
+ count+=10;
+ case 0:
+ count=+0;
+ case 1:
+ count+=1;
+ case 2:
+ count+=2;
+ case 3:
+ count+=3;
+ }
+ 
+ }
+ else
+ {
+ int x=(int)*d-47;
+ x++;
+ switch(x)
+ {
+ count-=10;
+ case 0:
+ count-=0;
+ case 1:
+ count-=1;
+ case 2:
+ count-=2;
+ case 3:
+ count-=3;
+ }
+ }
+ cout<<count<<endl;
+ return 0;
+ }",46,56,71,34,2
+"#include <stdio.h>
+#define f(x) (((x>>31)^x) - (x>>31))
+int main()
+{
+	int a=10, b=-9, c=100, d=1000, e=-1200;
+	printf(""%d\t%d\t%d\t%d\t%d\n"", f(a),f(b),f(c),f(d),f(e));
+	return 0;
+}
+",10	9	100	1000	1200,10	-9	100	1000	-1200,-10	-9	-100	-1000	-1200,10	-10	100	1000	-1201,1
+"#include<bits/stdc++.h>
+ using namespace std;
+ class abc
+ {
+ public:
+ abc()
+ {cout<<""constructor of abc""<<endl;}
+ ~abc()
+ {cout<<""destructor of abc""<<endl;}
+ };
+ class def
+ {
+ public:
+ def()
+ {cout<<""constructor of def""<<endl;}
+ ~def()
+ {cout<<""destructor of def""<<endl;}
+ };
+ class xyz:public abc,def
+ {
+ public:
+ xyz()
+ {cout<<""constructor of xyz""<<endl;}
+ ~xyz()
+ {cout<<""destructor of xyz""<<endl;}
+ };
+ class pqr:public xyz,abc,def
+ {
+ public:
+ pqr()
+ {cout<<""constructor of pqr""<<endl;}
+ ~pqr()
+ {cout<<""destructor of pqr""<<endl;}
+ };
+ int main()
+ {
+ pqr *x;
+ x=new pqr();
+ free(x);
+ return 0;
+ }","constructor of abc
+ constructor of def
+ constructor of xyz
+ constructor of abc
+ constructor of def
+ constructor of pqr","constructor of abc
+ constructor of def
+ constructor of xyz
+ constructor of abc
+ constructor of def
+ constructor of pqr
+ destructor of pqr
+ destructor of def
+ destructor of abc
+ destructor of xyz
+ destructor of def
+ destructor of abc","constructor of abc
+ constructor of def
+ constructor of xyz
+ constructor of pqr
+ destructor of pqr
+ destructor of xyz
+ destructor of def
+ destructor of abc","constructor of abc
+ constructor of def
+ constructor of xyz
+ Constructor of pqr",1
+"#include<bits/stdc++.h>
+ using namespace std;
+ int main()
+ {
+ char c[10],d[10],e[10];
+ scanf(""%3s"",&e);
+ scanf(""%*[abc]%6s"",&c);
+ scanf(""%[^abc]"",&d);
+ Printf("" %s"",d);
+ Printf("" %s"",e);
+ Printf("" %s"",c);
+ return 0;
+ }
+ // input string is abcbbcdefdefrqweatg",rqwe abc defdef,defrgweatg abc bbcdef,defrgwe abc def,None of this,1
+"#include <stdio.h>
+#include <stdlib.h>
+void print()
+{
+	printf(""HelloWorld\t"");
+}
+
+inline int* f1(int *a, int *b)
+{
+	int *c;
+	int p=*a+*b;
+	c=&p;
+	return c;
+}
+
+int* f2(int *a, int *b)
+{
+	int *c=(int*)malloc(sizeof(int));
+	*c=*a+*b;
+	Return c;
+}
+
+int main(int argc, char const *argv[])
+{
+	int a=1;
+	int b=2;
+	int *p1=f1(&a,&b);
+	int *p2=f2(&a,&b);
+	print();
+	printf(""%d\t"",*p1);
+	printf(""%d\t"",*p2);
+	return 0;
+}",HelloWorld	Garbage value 	3,HelloWorld        3        3,HelloWorld	3	Garbage value,HelloWorld        Garbage value        Garbage value,1
+"#include<bits/stdc++.h>
+ using namespace std;
+ int main()
+ {
+ char c[10],d[10],e[10];
+ scanf(""%3s"",&e);
+ scanf(""%*[abc]%6s"",&c);
+ scanf(""%[^abc]"",&d);
+ Printf("" %s"",d);
+ Printf("" %s"",e);
+ Printf("" %s"",c);
+ return 0;
+ }
+ // input string is abcbbcdefdefrqweatg",rqwe abc defdef,defrgweatg abc bbcdef,defrgwe abc def,None of this,1
+"#include <stdio.h>
+int f(int x)
+{
+	int c=0;
+	while(x)
+	{
+		c++;
+		x&=x-1;
+	}
+	return c;
+}
+int main(int argc, char const *argv[])
+{
+	int a=127,b=20,c=10,d=31,e=-1;
+	printf(""%d %d %d %d %d"",f(a),f(b),f(c),f(d),f(e));
+	return 0;
+}",7 2 2 5 32,7 2 1 2 0,7 2 1 2 32,7 2 2 5 0,1
+"//In a hypothetical situation:
+//If the size of heap is 104KB & size of stack is 204KB, 
+//what can be the max no of ""Hello""'s of the following C program:
+
+#include <stdio.h>
+#include <stdlib.h>
+#define ll long long
+char* f()
+{
+	char *c;
+	c = (char *)malloc(5000*sizeof (char));
+	if(c!=NULL)
+		return ""Hello"";
+	return """";
+}
+int main(int argc, char const *argv[])
+{
+	char* (*p)();
+	p=f;
+	int cnt=100;
+	while(cnt--)
+	{
+		printf(""%s\n"",p());
+	}
+	return 0;
+}
+",Hello 20 times,Hello 21 times,Hello 60 times,Hello 100 times,1
+"#include <stdio.h>
+
+int product1(int arr[])
+{
+        int size=sizeof arr/sizeof arr[0];
+        int p=1;
+        int i;
+        for(i=0;i<p;i++)
+                p=p**(arr+i);
+        return p;
+}
+
+int product2(int *arr)
+{
+        int size=sizeof arr/sizeof arr[0];
+        int p=1;
+        int i;
+        for(i=0;i<p;i++)
+                p=p**(arr+i);
+        return p;
+}
+
+int main(int argc, char const *argv[])
+{
+        int arr[]={1,2,3,4};
+        printf(""%d\n"",product1(arr));
+        printf(""%d\n"",product2(arr));
+        return 0;
+}","1 
+1","24 
+1","24 
+24",Compilation Error,1
+"#include <stdio.h>
+#define f(x) (((x>>31)^x) - (x>>31))
+int main()
+{
+	int a=10, b=-9, c=100, d=1000, e=-1200;
+	printf(""%d\t%d\t%d\t%d\t%d\n"", f(a),f(b),f(c),f(d),f(e));
+	return 0;
+}
+",10	9	100	1000	1200,10	-9	100	1000	-1200,-10	-9	-100	-1000	-1200,10	-10	100	1000	-1201,1
+"#include <stdio.h>
+#include <stdlib.h>
+
+const char* f(const char *c)
+{
+	return c;
+}
+int main(int argc, char const *argv[])
+{
+	char c[] = ""Hello"";
+	char *c1=f(c);
+	c1[0]='H';
+	printf(""%s\n"",c1);
+	return 0;
+}",Hello,Runtime Error,0,Compile Error at line: c1[0]='H',1
+"What will be the output
+#include<stdio.h>
+int main()
+{
+int a=5,b=4,c=3,d=4,i=0;
+if(a^b==2&&c&d==0)
+{
+printf(""loop1 "");
+goto loop2;
+}
+else
+goto start;
+for(i=0;i<=a;i++)
+{
+   loop2:
+d++;
+start:;
+ }
+printf(""%d"",d++);
+return 0;
+}",Loop1 6,9 and 11,Loop1 8,Loop1 7,2
+"#include <stdio.h>
+#define ll long long
+int main(int argc, char const *argv[])
+{
+	ll a=1;
+	a=a<<20;
+	ll c=0;
+	ll cnt=0;
+	for(ll i=0;i<a;i++)
+	{
+		ll j=i;
+		c=0;
+		while(j)
+		{
+			c+=j&1;
+			j=j>>1;
+		}
+		if(c==2)
+			cnt++;
+	}
+	printf(""%lld\n"", cnt);
+	return 0;
+}",190,200,210,220,1
+"#include <stdio.h>
+#define f1(x) (sizeof(x)/sizeof(*x))
+#define f2(x) (sizeof(x)/sizeof(typeof(*x)))
+#define ll long long
+int main(int argc, char const *argv[])
+{
+	ll arr[100];
+	arr[0]=1;
+	int a=f1(arr);
+	int b=f2(arr);
+	printf(""%d\t%d\n"",a),b;
+	
+	return 0;
+}",100	Garbage Value,200	Garbage value,100	100,200	100,1
+"#include <stdio.h>
+int main(int argc, char const *argv[])
+{
+	typeof(sizeof(int)) i;
+	i=0;
+	i--;
+	if(i<0)
+		printf(""i is negative\t"");
+	else
+	{
+		printf(""i is positive\t"");
+		while(i--)
+			printf(""Hello\t"");
+		printf(""%lu\n"",sizeof(i));	
+	}
+	return 0;
+}",i is positive	Hello(2^64 times)	8,i is positive	Hello(2^32 times)	4,i is positive	Hello(2^32-1 times)	4,i is negative	,1
+"#include <iostream>
+using namespace std;
+#define f1(x,y) (x^=y^=x^=y)
+#define f2(x,y) (y^=x^=y^=x)
+int main(int argc, char const *argv[])
+{
+	int a=5;
+	int b=10;
+	int c=f1(a,b)++ + f2(a,b)++;
+	cout<<a<<""\t""<<b<<""\t""<<c<<endl;
+	return 0;
+}","6	11	15
+","7	10	15
+","6	11	16
+","7	10	16	
+",1
+"#include <stdio.h>
+f(char a)
+{
+	return a;
+}
+typedef struct st
+{
+	char a:3;
+}s1;
+int main()
+{
+	s1.a=1;
+	while((s1.a))
+	{
+		printf(""%d\t"",f(s1.a));
+		s1.a++;
+	}
+	return 0;
+}
+","1	2	3	-4	-3	-2	-1
+","1	2	3
+","Infinite loop
+","Compilation error
+",1
+"#include <stdio.h>
+
+struct st
+{
+	typeof(sizeof(long double)) a:3;
+};
+int main()
+{
+	struct st s1;
+	s1.a=1;
+	while((s1.a))
+	{
+		printf(""%d\t"",s1.a);
+		s1.a++;
+	}
+	return 0;
+}","1	2	3	4	5	6	7
+","1	2	3	-4	-3	-2	-1
+","1	2	3
+","Infinite loop
+",1
+"#include <iostream>
+#include <bitset>
+using namespace std;
+typedef bitset<0> b0;
+typedef bitset<32> b1;
+typedef bitset<64> b2;
+#define f(x,y) (b##y*)(&x+1)-(b##y*)(&x)
+int main(int argc, char const *argv[])
+{
+	long l;
+	cout<<f(l,0)<<""\t""<<f(l,1)<<""\t""<<f(l,2)<<endl;
+	return 0;
+}","8	1	1
+","Infinite	1	1
+","64	1	0
+","Infinite	1	0
+",1
+"#include<bits/stdc++.h>
+using namespace std;
+#define MAXX 3
+#define MAXY 4
+#define MAXZ 5
+int main()
+{
+int ***p,i,j,k;
+p=(int***)malloc(MAXX*sizeof(int**));
+for(int i=0;i<MAXX;i++)
+{
+p[i]=(int**)malloc(MAXY*sizeof(int*));
+for(int j=0;j<MAXY;j++)
+p[i][j]=(int*)malloc(MAXZ*sizeof(int));
+}
+for(int k=0;k<MAXZ;k++)
+{
+for(int i=0;i<MAXX;i++)
+{
+for(int j=0;j<MAXY;j++)
+{
+p[i][j][k]=i+j+k;
+printf(""%d"",p[k][j][i]);
+}
+printf(""\n"");
+}
+}
+return 0;
+}","01234
+12345
+23456
+34567
+12345
+23456
+34567
+45678
+23456
+34567
+45678
+56789"," 0123
+0000
+0000
+1234
+2345
+0000
+2345
+3456","0123
+1234
+2345
+1234
+2345
+3456
+2345
+3456
+4567
+3456
+4567
+5678
+4567
+5678
+6789", Error,4
+"What is the output of the following program?
+
+#include<stdio.h>
+#define aa(a,b) (a)||(b)
+#define ab(a,b) (a)&&(b)
+#define ba(a,b) (a)&&(b)
+#define bb(a,b) (a)^(b)
+int main(){
+ int a=-1,b=0,c=1,d=0,e,f;
+ e=(ab(++a+b--+c+++--d,b+a+++c+d--));
+ f=(aa(++a+b--+c+++--d,--b+a+c--+d));
+ printf(""%d %d %d %d %d %d"",a,b,c,d,e,f);
+}
+",1 -3 2 -2 0 1   ,1 -3 2 -2 1 0,2 -3 3 -3 0 1,1 -3 2 -2 0 0,1
+"what is the output of following program?
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ int a=1;
+ int arr[]={122,123,124,125};
+ printf(""%d %x"",arr[EXIT_SUCCESS],arr[printf(""%d "",a)]);
+}
+",1  123  7c,122  1 7c,1   122  7c,122 7c 1,3
+"What is the output of following program?
+
+#include <stdio.h>
+using namespace std;
+#define yes(s) #s
+#define get(a,b,c,d,e,f,g,h,i) a##b##c##d##e##f##g##h##i
+#define square(x) x*x
+int main() {
+ char *p=yes(PICT Pradnya);
+ long int n=get(1,0,0,0,0,0,0,0,0);
+ n>>=20;
+ printf(""%s %ld"",p,square(n+9));
+}
+",compile error,PICT Pradnya 1000,PICT Pradnya 969 ,PICT Pradnya 959,4
+"What is the output of following program?
+
+#include <stdio.h>
+#include <stdlib.h>
+int func1(int x, int y)
+{
+ if (y == 0)
+  return x;
+ else
+  return func1( x ^ y, (x & y) << 1);
+}
+int func2(int x, int y)
+{
+    return printf(""%*c%*c"",  x, ' ',  y, ' ');
+}
+int main(void) {
+ printf(""%d"",func2(5,4)+func1(50,30));
+}
+",(Note: Output Contains Space)89,(Note: Output Contains Space)89,(Note: Output Contains Space)89,(Note: Output Contains Space)89,1
+"What is the output of following program?
+
+#include <stdio.h>
+#include <string.h>
+int func1(int n)<%
+ if(n==1)
+  return 1;
+ return n*func1(n-1);
+%>
+int main(void) <%
+ char arr<:7:>=<%'a','p','r','d','n','y','a'%>;
+ int a<:10:>,i;
+ for(i=1;i<=10;i++)<%
+   a<:i-1:>=func1(i);
+ %>
+ for(i=1;i<=10;i++)<%
+  printf(""%c"",arr<:a<:i-1:>%7:>);
+ %>
+%>
+
+",pradpaaaaa    ,pradnyaaa,compile error    ,pradnyaaaa,1
+"What is the output of the following program?
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(void) {
+ double d=0.0/0.0;
+ double f=-INFINITY;
+ double h=-HUGE_VAL;
+ double i=-HUGE_VALF;
+ double j=-HUGE_VALL;
+ printf(""%lf %lf %lf %lf %lf"",d,f,h,i,j);
+ float a=1;
+ double b=1;
+ if(h==f&&i==j)
+  printf("" equal"");
+ else
+  printf(""not equal"");
+}
+",  -inf -inf -inf -inf -inf equal,    nan inf -inf -inf -inf equal,  -nan -inf -inf inf inf equal,  -nan -inf -inf -inf -inf equal,4
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+char fun(){
+ return '*';
+}
+int main(void) {
+ static int a=5,b=10;
+ char (*p)();
+ p=&fun;
+ if(a&&b){
+ printf(""*%*c\n"",a,p());
+ a--;
+ main();
+ }
+ b--;
+}
+
+","  **
+  * *
+  *  *
+  *   *
+  *    *","   *    *
+   *   *
+   *  *
+   * *
+   **
+",  compile error,  stack overflow,2
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+#define __n__(x) x*x+x*x;
+int fun(int x){
+ return __n__(x+x);
+}
+int fun2(int x){
+return __n__(x+x*x);
+}
+int main(PRADNYA16) {
+ int (*p)();
+ int (*q)();
+p=fun;q=fun2;
+ char ch[20]=""abcdefghijklm"";
+ printf(""%5.2s "",ch);
+ printf(""%d %d %d"",(*p)(9),(*q)(7),sqrt('a'));
+
+}
+
+",     ab 198 799 198, compile error,   none of these,     ab 324 798 198,3
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ auto i;
+ register j;
+ long int k;
+ extern h;
+ static n;
+ printf(""%d %d %d %d %d"",i,j,k,h,n);
+}
+h;
+
+
+",   0 0 garbage 0 0, 0 0 garbage garbage 0, compile error,   garbage 0 garbage 0 0,1
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+#define INC PRADNYA16
+int main(INC) {
+ int (*q)[3][4];
+ int (*fun())[3][4];
+void fun2(int (*q)[3][4]);
+ q=fun();
+ fun2(q);
+}
+void fun2(int (*q)[3][4]){
+ int i,j;
+ for(i=0;i<3;i++){
+  for(j=0;j<4;j++){
+   printf(""%d "",(*q)<:i:><:j:>*(*q)[i][j]);
+  }
+ }
+}
+int (*fun())[3][4]{
+ static int a[3][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+ return (int(*)[3][4])a;
+}
+
+
+",  1 4 9 16 25 36 49 64 81 100 122 144,none of these,   compile error,  1 4 9 16 25 36 49 64 81 10 121 144,2
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ int (*q)[4],i,j,k;
+ int (*fun())[4];
+ int *p;
+ q=fun();
+ for(i=0;i<2;i++){
+  p=(int*)(q+i*3);
+  for(j=0;j<3;j++){
+   for(k=0;k<4;k++){
+    printf(""%d "",*p);p++;
+   }
+  }
+ }
+}
+int (*fun())[4]{
+ static int a[2][3][4]={
+   {
+     1,2,3,4,
+     5,6,7,8,
+     9,10,11,12
+   },{
+     1,2,3,4,
+     5,6,7,8,
+     9,10,11,12
+   }
+ };
+ return (int(*)[4])a;
+}
+
+
+
+",   1 2 3 4 5 6 7 8 9 10 11 12 1 2 3 4 5 6 7 8 9 10 11 12, 1 2 3 4 5 6 7 8 9 10 11 12,   compile error,   1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4,1
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ int (*q)[3][4],i,j,k;
+ int (*fun())[3][4];
+ int *p;
+ q=fun();
+for(i=0;i<2;i++){
+  p=(int*)(q+i);
+  for(j=0;j<3;j++){
+   for(k=0;k<4;k++){
+    printf(""%d "",*p);p++;
+   }
+  }
+ }
+}
+int (*fun())[3][4]{
+ static int a[2][3][4]={
+   {
+     1,2,3,4,
+     5,6,7,8,
+     9,10,11,12
+   },{
+     1,2,3,4,
+     5,6,7,8,
+     9,10,11,12
+   }
+ };
+ return (int(*)[3][4])a;
+}
+
+
+",     1 2 3 4 5 6 7 8 9 10 11 12 1 2 3 4 5 6 7 8 9 10 11 12, 1 2 3 4 5 6 7 8 9 10 11 12 1 2 3 4 5 6 7 8 1 2 3 4,   compile error,    1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3,1
+"What is the output of following program?
+int main(void) {
+ int *q=(int*)malloc(sizeof(int)*10),i;
+ int *r=(int*)calloc(10,sizeof(int));
+ int *p=q;
+ for(i=0;i<10;i++){
+  if(*q==*r){
+   q++;
+   r++;
+  }
+ }
+ free(p);
+ free(r);
+}
+
+
+
+",   0 0 0 0 0 0 0 0 0 0,invalid pointer,   compile error,  no output,2
+"What is the output of following program if address of a=3998953552?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ int a[]={1,2,3,4,5};
+ int b;
+ b=a;
+ b++;
+ int *c=a;
+ printf(""%u %u %u"",++b,a,++c);
+}
+
+
+
+",   3998953554 3998953552 3998953556,3998953556 3998953552 3998953556,  3998953555 3998953552 3998953556,  3998953558 3998953552 3998953556,1
+"
+What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ int arr[]={1,2,3,4};
+ int *p=arr+sizeof(arr)/sizeof(int)-1,i;
+ for(i=0;i<4;i++){
+  printf(""%d "",p[-i]);
+  p[-i]=arr[i]+i[arr];
+  printf(""%d "",p[-i]);
+ }
+}
+
+
+",   4 2 3 4 2 8 1 4, compile error,   4 2 3 4 8 2 1 4,  4 2 3 4 2 8 4 1,1
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ char n[]=""hello"";
+ char n2[6];
+ char *p=""bye"";
+ p=n;
+ n2=n;
+ printf(""%s %s"",p,n2);
+}
+
+
+", compile error,hello bye,bye hello,hello hello   ,1
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+float a=5.2;
+ double b=5.2;
+ long double c=5.2;
+ if(a==b==c)
+  printf(""EQUAL "");
+ if(a==5.2&&b==5.2&&c>5.2)
+  printf(""INC "");
+ printf(""PRADNYA\'16"");
+}
+
+",   PRADNYA\'16,EQUAL INC PRADNYA\'16,PRADNYA'16,   EQUAL PRADNYA'16,3
+"What is the output of following program?
+#include<stdio.h>
+char _n_(int,...);
+int main(){
+    char (*p)(int,...)=&_n_,i;
+    for(;i=(*p)(0,1,2,3,4); )
+         printf(""%d"",65);
+    return 0;
+}
+char _n_(int a,...){
+    static i=-1;
+    printf(""%d"",20);
+    return i+++a;
+}
+
+
+",compile error,2065,206520,65,3
+"What is the output of the following program?
+#include <stdio.h>
+int main() {
+ printf(""%s "",""HELLO"");
+ printf(""%9s "",""HELLO"");
+ printf(""%.9s "",""HELLO"");
+ printf(""%-9s "",""HELLO"");
+printf(""%-9.9s "",""HELLO"");
+ printf(""%9.9s "",""HELLO"");
+}
+
+
+",    HELLO HELLO          HELLO HELLO HELLO         HELLO,HELLO     HELLO HELLO HELLO HELLO         HELLO,HELLO     HELLO HELLO          HELLO     HELLO         HELLO,   HELLO     HELLO HELLO HELLO     HELLO         HELLO,4
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ char *p=""ANC"";
+ p=""INC\'16"";
+ printf(""%s"",p);
+ const char *q=""PICT"";
+ q=""INC16"";
+ printf("" %s"",q);
+ char const *s=""INC16"";
+ s=""PICT"";
+ printf("" %s"",s);
+ char* const t=""PRADNYA"";
+ printf("" %s"",t);
+ const char* const u=""INC16"";
+}
+
+
+
+",INC\'16 INC16 PICT PRADNYA    ,INC'16 INC'16 PICT PRADNYA,compile error,   INC'16 INC16 PICT PRADNYA,4
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ char a[2][2][2]={""Hi"",""bye"",""cya""};
+ char b[2][2][2]={""Hi"",""bye"",""cya""};
+ char c[2][2][2],d[2][2][2];
+ strcpy(c,a);
+ strcpy(d,b);
+ if(strcmp(a,d)||strcmp(c,b))
+  printf(""hi "");
+ if(a==b&&c==d&&b==c&&a==d)
+  printf(""hey "");
+ printf(""hello"");
+}
+
+
+
+",    hi hello,hello,hi hey hello,   compile error,2
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ char s[4]=""ABCDE"";
+ size_t a=2147483648;
+ char *str[]={""PICT"",""INC"",""16"",""PRADNYA""};
+ char *p=s+4;
+ *p='A';
+ p++;
+ *p='B';
+ p++;
+ *p=0;
+ printf(""%s %d %d %d"",s,a,sizeof(a),sizeof(str));
+}
+
+
+",ABCDEAB 2147483648 64 32,ABCDEAB -2147483648 8 32,ABCDAB -2147483648 8 32,   ABCDAB 2147483647 64 32,3
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ switch(1){
+  int f=1,i,n=10;
+  for(i=n;i>=1;i--)
+   f*=i;
+  printf(""%d "",f);
+  break;
+  f=1,n=5;
+  for(i=n;i>=1;i--)
+  f*=i;
+  printf(""%d "",f);
+  break;
+ }
+ int f=1,a=15,b=3,i;
+ for(i=0;i<b;i++)
+  f*=a;
+ printf(""%d "",f);
+}
+
+
+
+",    3628800 120 3375,compile error,3375,   3628800 3375,3
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ int a=10,b=5,c=8,d=20;
+ d=++a&&(b++*c<<2)/(a+2,b-2,c+3);
+ printf(""%d"",d);
+}
+
+
+",0,none of these,compile error ,   runtime error,2
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+ static int a[]={1,2,3,4};
+ int *p=a;
+ int *q=a+sizeof(a)/sizeof(int)-1;
+ int *r=a+2;
+ int var1=*p+++(*p)--+*p+++*r--+*q;
+ int var2=++*q-++*p+--*r+*r++;
+ int var3=(*p+++(*p)--+*p+++*r--+*q)&&(++*q-++*p+--*r+*r++);q--;
+ printf(""%d %d %d %d"",var1,var2,var3,a[(*p+*q+*r)%4]);
+}
+
+
+",1 11 1 -1,11 1 -1 -1,11 1 1 -1,1 1 -1 -1   ,3
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct INC{
+ char *c;
+ const char a[20];
+ short int code;
+}PRADNYA;
+int main(void) {
+ PRADNYA *c=(PRADNYA*)malloc(sizeof(PRADNYA));
+ c->c=""FIRST"";
+ strcpy(c->a,""ROUND"");
+ c->code=2147483648;
+ printf(""%s %s %d "",c->c,c->a,c->code);
+ c->c=""PRADNYA"";
+ c->code=32768;
+ c->a=""C/C++"";
+ printf(""%s %s %d "",c->c,c->a,c->code);
+}
+
+
+",FIRST ROUND 0 PRADNYA ROUND -32768,FIRST ROUND 0 PRADNYA C/C++ -32768,compile error,   FIRST ROUND 0 PRADNYA ROUND 32768,3
+"What is the output of following program?
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct INC{
+ char *c;
+ const char a[20];
+ short int code;
+}PRADNYA;
+int main(void) {
+ PRADNYA *c=(PRADNYA*)malloc(sizeof(PRADNYA));
+ c->c=""FIRST"";
+ strcpy(c->a,""ROUND"");
+ c->code=2147483648;
+ printf(""%s %s %d "",c->c,c->a,c->code);
+ c->c=""PRADNYA"";
+ c->code=32768;
+ c->a=""C/C++"";
+ printf(""%s %s %d "",c->c,c->a,c->code);
+}
+
+
+",FIRST ROUND 0 PRADNYA ROUND -32768,FIRST ROUND 0 PRADNYA C/C++ -32768,compile error,   FIRST ROUND 0 PRADNYA ROUND 32768,3
+"  What is the output of this program?
+
+    #include <iostream>
+    using namespace std;
+    void square (int *x)
+    {
+        *x = (++*x ) * (*x);
+    }
+    int main ( )
+    {
+        int num = 10;
+        square(&num);
+        cout << num; 
+        return 0;
+    }",121,"compile time error
+",144,110,1
+"#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+	int x = (pow(2,5)-6),y;
+	for (y = 0; x; y++)	x =(x & (x - 1));
+	cout<<y<<endl;
+	return 0;
+}
+",3,6,9,none of these,1
+"#include <iostream>
+#define fun(a, b) (y ^ ((x ^ y) & -(x < y)))
+using namespace std;
+
+int main(){
+	int x=15,y=25,r;
+	r = fun(fun(y,x),fun(x,y));
+	cout<<r<<endl;
+	return 0;
+}",0,22,none of these ,12,3
+"#include <iostream>
+#include <cstdio>
+#include <vector>
+using namespace std;
+int fun(int a,int b){
+        if(b==0) return a;
+        return fun(b,a%b);
+}
+int main(){
+        int k=3;
+        static int sum = 0;
+        vector <int> v;
+        v.reserve(10);
+        for(int i=0;i<5;i++)        sum+=fun(i,i+k);
+        cout<<(sum+v.size())<<endl;
+        return 0;
+}
+",9,19,14,none of these,1
+"#include<stdio.h>
+int main(){
+	int var=14,c;
+	for(c=0;var;var>>=1)	c+=var&1;
+	printf(""%d"",c);
+	return 0;
+}
+",4,2,3,garbage value,3
+"#include<stdio.h>
+const int num=50;
+int main()
+{
+int func(void);
+
+int p,q,r;
+p=func();
+printf(""%d\n"",p);
+q=func();
+printf(""%d\n"",q);
+r=func();
+printf(""%d\n"",r);
+
+return 0;
+}
+int func(void)
+{
+static int num = 100;
+num = num+23;
+return num;
+}","50
+50 
+50","100
+100
+100","123
+123
+123","123
+146
+169",4
+"#include<stdio.h>
+int main(){
+        int var=printf(""%d"",printf(""%d"",printf(""12"")))*printf(""%d"",printf(""%d"",printf(""12"")));
+        printf(""%d"",var);
+        return 0;
+}
+",122112211,221122112,Compile time error,122121121,1
+"#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main(){
+	vector <int> my_vector;
+
+	my_vector.push_back(3);
+	my_vector.push_back(4);
+	my_vector.push_back(2);
+	my_vector.push_back(1);
+
+	sort(my_vector.begin(),my_vector.end());
+	reverse(my_vector.rbegin(),my_vector.rend());
+
+	for(int i=0;i<my_vector.size();i++){
+		cout<<my_vector[i]<<"" "";
+	}
+	return 0;
+}
+",4 3 2 1,1 2 4 3,3 4 2 1,1 2 3 4,1
+"#include<stdio.h>
+int shifts(void);
+int main()
+{
+int c;
+static int a=256;
+do
+{
+
+a=a>>1;
+
+c=shifts();
+if(c<16)
+printf(""Hello\n"");
+
+}while(a>4);
+return 0;
+}
+
+int shifts()
+{
+static int b=128;
+b=b>>1;
+return b;
+}
+",Infinite loop,"Hello
+Hello
+Hello","Hello
+Hello","Hello
+Hello
+Hello
+Hello
+Hello",2
+"#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main(){
+	string url=""www.google.com"";
+	url:http://www.google.com/;
+	cout<<url<<endl;
+	return 0;
+}
+",Compile time error,http://www.google.com/,Runtime error,www.google.com,4
+"#include <iostream>
+
+using namespace std;
+int main(){
+        int v=(12&3)^(14&5);
+        int result=v;
+        result+=v;
+        if(!(v=(v&(v-1))))
+                result+=v/2,
+                result+=v;
+        else result+=v/2;
+        cout<<result<<endl;
+        return 0;
+}
+",14,8,12,Compile time error,2
+"#include <iostream>
+#include <math.h>
+using namespace std;
+
+int pradnya(int n){
+	for(int i=2;i<sqrt(n);i++)	if(n%i==0) return 10;
+	return 20;
+}
+int main(){
+	cout<<pradnya(pradnya(pradnya(pradnya(23)>pradnya(21)?3:19)+23)+3);
+	return 0;
+}
+",10,20,23,None of these,2
+"#include<stdio.h>
+#include<string.h>
+int main()
+{
+char INC[100]=""Impetus&Concepts"";
+char Concepts[100]=""&Concepts"";
+if(strstr(INC,Concepts))
+{
+if(strchr(INC,'&'))
+strcat(INC,Concepts);
+else
+strcpy(INC,Concepts);
+printf(""%s"",INC);
+}
+else
+printf(""%s"",Concepts);
+return 0;
+}",Impetus&Concepts&Concepts,&Concepts,Impetus&Concepts,Concepts,1
+"What is output of this code:- 
+#include <stdio.h>
+#define num 4
+#define int double
+#define char float
+#define float char*
+#define double int
+int main() {
+        short b=100;
+        int c=(2,0,1,6);
+        double d=(2,0,1,6);
+        float e=""INC"";
+        char a=""PRADNYA16"";
+        printf(""%d"",sizeof(a),'*','*','*','*','*');
+        printf(""%d"",sizeof(b),'*','*','*','*','*');
+        printf(""%d"",sizeof(c),'*','*','*','*','*');
+        printf(""%d"",sizeof(d),'*','*','*','*','*');
+        printf(""%d"",sizeof(e),'*','*','*','*','*');
+}
+",84488,compile error,84484,82488,4
+"What is output of this code:-
+#include <stdio.h>
+enum inc{inc1,inc2,inc3,inc4,inc5};
+enum inc21{inc11,inc21,inc31,inc41,inc51};
+enum inc26{inc12,inc22,inc32,inc42,inc52};
+struct A{
+      enum inc grpA;
+      enum inc21 grpB;
+      enum inc26 grpC;
+};
+struct B{
+     enum inc grpA;
+     enum inc21 grpB;
+     enum inc26 grpC;
+};
+struct C{
+     struct A grp;
+     struct B grpA;
+     enum inc grpB;
+     enum inc21 grpC;
+     enum inc26 grpD;
+};
+int main(void) {
+ printf(""%d %d %d %d %d"",sizeof(enum inc),sizeof(struct A),sizeof(struct C),sizeof(struct B),sizeof(enum inc21));
+}
+",8 12 36 12 4,  4 12 36 8 4,8 12 36 4 4,4 12 36 12 4,4
+"What is output of this code:-
+#include <stdio.h>
+int main(void) {
+      int *p2={97,98,99,100,101,102,103,104,105,106,107,108};
+      float *p3={97,98,99,100,101,102,103,104,105,106,107,108};
+      double *p4={97,98,99,100,101,102,103,104,105,106,107,108};
+      if(p2==p3==p4){
+            printf(""%d"",*&*&*&*&*&p2&&*&*&*&p3);
+            printf(""%c"",(*&*&*&*&*&p4||*&*&*&p3)+65);
+            printf(""%d"",*&*&*&*&*&p2&&!*&*&*&p3);
+      }
+      else{
+            printf(""%d"",*&*&*&*&*&p2&&*&*&*&p3);
+            printf(""%c"",(*&*&*&*&*&p4&&*&*&*&p3)+65);
+           printf(""%d"",*&*&*&*&*&p2&&!*&*&*&p3);
+      }
+}
+
+",1B0,compile error,0B1,1B1,1
+"What is output of this code:-
+#include <stdio.h>
+using namespace std;
+enum D{short1=0,medium2,long3};
+struct C{
+      class A ***h;
+      class B **swap;
+};
+struct E{
+      enum D E;
+      struct E ****F;
+};
+class A{
+      struct C k;
+      struct E ***j;
+      enum D *****l;
+};
+class B{
+      enum D a;
+      struct C b;
+      struct E c;
+      class A d;
+};
+int main() {
+      #define scanf sizeof
+      B *swap=new B();
+      int *inc=new int[scanf(swap)];
+      inc[0]=scanf(swap);inc[1]=scanf(swap);
+      printf(""%d %d "",scanf(swap),*inc**&*&*inc++**inc);
+      printf(""%d %d "",scanf(E),scanf(A));
+      printf(""%d %d "",scanf(B),scanf(C));
+      printf(""%d %d "",scanf(D),scanf(A));
+}
+",8 512 16 32 72 16 4 32,8 512 16 32 72 8 4 32 ,compile error,8 256 16 32 72 8 4 32,1
+"#include<stdio.h>
+
+int main()
+{
+int *p3,**p2,***p,p1;
+
+p3=(&p1,p2=&p3,p=&p2,p1=20);
+int q=(++*p3)*p1/(**p2--)+***p;
+printf(""%d\n"",q);
+return 0;
+}",0,error,1,2,2
+"What is output of this code:-
+#include <iostream>
+using namespace std;
+int inc=0;
+class A{
+public:A(){
+       inc++;
+}
+ void fun(){
+       A *o=new A();
+ }
+};
+class B: public A{
+public:B(){
+      inc++;
+}
+void fun(){
+      A *I=new B();
+      B *N=new B();
+      A *C=new B();
+}
+};
+class C: public A{
+public:C(){
+        cout<<inc;
+ }
+ void fun(){
+       A *I=new A();
+       B *N=new B();
+       C *c=new C();
+ }
+};
+class D:public A{
+public:D(){
+        cout<<inc;
+ }
+ void fun(){
+       A *I=new C();
+       B *N=new B();
+       D *C=new D();
+ }
+};
+class E:public B,public C,public D{
+public:E(){
+        inc++;
+}
+void fun(){
+       E *I=new E();
+       E *N=new E();
+       E *C=new E();
+}
+};
+int main() {
+      E *o=new E();
+      (*o).fun();
+}
+",123413141819,"348913141819
+","123413146619
+","348913141818
+",2
+"#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <utility>
+using namespace std;
+bool mypredicate (int i, int j)
+{
+    return (i == j);
+}
+int main () 
+{
+   vector<int> myvector;
+   for (int i = 1; i <= 6; i++) myvector.push_back (i * 10);
+   int myints[] = {10, 20, 30, 40, 1024};
+   pair<vector<int> :: iterator, int*> mypair;
+   mypair = mismatch (myvector.begin(), myvector.end(), myints);
+   cout  << *mypair.first<<'\n';
+   cout  << *mypair.second << '\n';
+   ++mypair.first; ++mypair.second;
+   return 0;
+}","50
+60","40
+50","50
+1024",None of these,3
+"#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[]=""This Is a test"";
+   char *ptr[10],*p;
+   int i=1,j;
+   p=strtok(str,"" "");
+   if(p!=NULL)
+   {
+ptr[0]=p;
+while(1)
+{
+   p=strtok(NULL,"""");
+   if(p==NULL)
+break;
+   else
+   {
+ptr[i]=p;
+i++;
+   }
+}
+   }
+   for(j=0;j<i;j++)
+printf(""%s\n"",ptr[j]);
+   return 0;
+}","This
+Is
+a
+test",This Is a test,"This
+Is a test",None of these,3
+"#include <stdio.h>
+int main()
+{
+printf(""Indian"",""Army\n"");
+return 0;
+}",Indian Army,Indian,Indian Army\n,Army,2
+"#include<stdio.h> 
+int main() 
+{ 
+int arr[] = {1, 4, 9, 16, 25, 36}; 
+int *p = (int*)(&arr+1);
+int *p2 = ( ++*((int*)(&arr)+1), (int*)(&arr)+2  );
+printf(""%d "", (*(p-1)+*(p2-1))); 
+return 0; 
+}",14,45,6,41,4
+"#include<stdio.h>
+int main() 
+{
+    struct s2;
+    struct  s1
+       {
+           char* str;
+           struct s2* next;
+          
+       }; 
+       struct s2
+         {  char* str;
+             struct s1* next;
+         }; 
+         struct s2 *p[3];
+         struct s2 arr2[]={
+            {""akshay"",arr2+1},{""kunal"",arr2+2},{""raj"",arr2}
+         };
+         struct s1 arr1[]={
+            {""hrishi"",arr1+1},{""panda"",arr1+2},{""pranav"",arr1}
+         };
+         int i;
+         for(i=0;i<=2;i++) 
+         { 
+            if(i%2==0)
+            p[i]=arr1[i].next;
+        else
+            p[i]=arr2[i].next;
+        }
+        printf(""%s\n"",(p[1]->next)->str );
+          printf(""%s\n"",(*p)->str );
+            printf(""%s\n"",((*p+1))->str );
+            
+         
+}","akshay
+Kunal
+raj","hrishi
+panda
+pranav","akshay
+panda
+pranav","Hrishi
+Kunal
+raj",3
+"//for 4byte int predict the output
+#include<stdio.h>
+#define inc(x,y,z) --x<<y>>z++
+int main()
+{
+int a=1;
+~a;
+int b=0;
+printf(""%x \t"",inc(b,3,a));
+printf(""%x \n"",(-a)<<3);
+}",fffffff8 fffffff0,fffffffc fffffff0,fffffff8 fffffff8,fffffffc fffffff8,2
+"#include<stdio.h>
+#include<string.h>
+#define pop(x,y) x*y
+int main()
+{
+int a=10;
+int b=20;
+int c=1;
+printf(""%d \n"",pop(a+++b---c,a+++c---b++));
+printf(""%d \n"",a);
+printf(""%d \n"",b);
+printf(""%d \n"",c);
+return 0;
+}","2 
+11 
+22 
+-1","1 
+12 
+20 
+0 ","2
+11 
+22 
+1","1 
+11 
+20 
+0 ",2
+"#include<stdio.h>
+#define impetus(x,y,z) x*y+z
+int main()
+{
+int arr[]={1,1,5,2,8,6};
+int *a=(++*(arr+1),(&arr+1));
+a=a-1;
+++*a++;
+a=a-2;
+++*a;
+int *p=a;
+p=p-3;
+++*p;
+int *q=a+1;
+int a1=*p;
+int a2=*a;
+int a3=*q;
+printf(""%d"",impetus(a1,a2,a3));
+return 0;
+}",28,24,36,34,4
+"#include<stdio.h>
+int main()
+{
+int fun(int);
+static int a=3;
+fun(a=fun(fun(a)));
+printf(""Value of a is %d\n"",a);
+return 0;
+}
+int Concepts(int a)
+{
+printf(""Value of a is %d\n"",a);
+}
+int fun(int a)
+{
+int (*ptr)(int)=&Concepts;
+return (*ptr)(--a);
+}","Value of a is 2
+Value of a is 16
+Value of a is 17
+Value of a is 17","Value of a is 2
+Value of a is 15
+Value of a is 16
+Value of a is 17","Value of a is 2
+Value of a is 15
+Value of a is 14
+Value of a is 13","Value of a is 2
+Value of a is 16
+Value of a is 16
+Value of a is 15",2
+"#include<stdio.h>
+#define Morefun(x,y,z)x+y+z+fun(x,y,z)
+int fun(int,int ,int);
+enum INC{Pradnya=1,Pratibha=0,Techfun,Concepts=9,Design,Projects=4,Xodia};
+int main()
+{
+enum INC i=Pradnya;
+enum INC i2=Techfun;
+enum INC i3=Design;
+enum INC i4=Xodia;
+struct pictpune
+{
+int arr1 : 1;
+int arr2 : 5;
+int arr3 : 3;
+}pict={i,i3,i4};
+printf(""%d "",Morefun(pict.arr1,pict.arr2,pict.arr3));
+return 0;}
+int fun(int x,int y,int z)
+{enum INC i5;
+int ret=(x+++y+++z,x+y+z);
+int s=sizeof(i5);
+int retu1=ret+s;
+return retu1;
+}",18,32,16,28,1
+"int pict(int x, int *p2, int **p3) 
+{ 
+int y, z; 
+**p3 += 1; 
+z = **p3; 
+*p2 += 2; 
+y = *p2; 
+x += 3; 
+return (x * y * z); 
+} 
+void main() 
+{ int a[]={1,2,3,4};
+int c1, *c2, **c3; 
+int *p=a;
+++*p++;
+*p++;
+++*p;
+c1=*p;
+c2 = &c1; 
+c3 = &c2; 
+printf(""%d , %d  , %d"", a[0],a[1],pict(c1, c2, c3)); 
+return 0;
+}","1,3,245","2,3,350","2,2,245","1,2,350",3
