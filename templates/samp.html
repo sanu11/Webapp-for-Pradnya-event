@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>Questions</title>
+    {% load staticfiles %}
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.plugin.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.countdown.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static 'css/jquery.countdown.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/ques_styles.css' %}" >
+
+</head>
+
+<body >
+    <section id="questions" class="cf">
+        <div class="wrapper">    
+            <div class="row">
+                <div class="col">    
+                    <div id="defaultCountdown"></div>
+                </div>
+                <div class="col">
+                    <p class="score">Score = {{score}}</p>
+                </div>
+                <div class="col">
+                    <p id="percentage" class="score">Percentage = {{percent}}</p> 
+                </div>
+                <div class="col">    
+                    <button name ="Log out" class="button button_logout logout" onclick="window.location.href='/logout'">Logout</button>
+                </div>
+            </div>
+
+            <form action="/ques" method="post">
+                {% csrf_token %}
+                
+                <div class="column">
+                    <div class="code">    
+                        <pre unselectable="on" class="unselectable">{{q.question}}</pre>
+                    </div>  
+                </div>
+
+                <div class="column">
+                    <h3>Select Option</h3>
+                    <input type='hidden' name="qid" value={{q.qid}} >   <!--send question id to server-->
+                    <input type="radio" name="answer" value="1">{{q.op1}}<br>
+                    <input type="radio" name="answer"  value="2">{{q.op2}}<br>
+                    <input type="radio" name="answer" value="3">{{q.op3}}<br>
+                    <input type="radio" name="answer"  value="4">{{q.op4}}<br>
+                    <input type="submit" id="next" class="button button_highlight" value="Next">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        $(function () 
+        {
+            var count;
+            var timer= "{{time}}";
+            console.log(timer);
+            $('#defaultCountdown').countdown({until: timer,format:"MS",expiryUrl: "/logout"});
+
+//window.alert("ff");
+            setInterval(function(){
+                var periods = $('#defaultCountdown').countdown('getTimes');
+                var new_period = periods[5]*60+periods[6];
+                //alert(new_period)
+                function getCookie(name) {
+                    var cookieValue = null;
+                    if (document.cookie && document.cookie != '') {
+                        var cookies = document.cookie.split(';');
+                        for (var i = 0; i < cookies.length; i++) {
+                            var cookie = jQuery.trim(cookies[i]);
+                            // Does this cookie string begin with the name we want?
+                            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                break;
+                            }
+                        }
+                    }
+                    return cookieValue;
+                }
+
+                var csrftoken = getCookie('csrftoken');
+
+                if(new_period == 300)
+                {
+                    $.ajax({
+                    url  : '/update_score',
+                    type : 'POST',
+                    data : {
+                        csrfmiddlewaretoken : csrftoken,
+                    },
+                    
+                    })
+                }
+            },1000);    
+        });
+        function preventBack(){window.history.forward();}
+        setTimeout("preventBack()", 0);
+        window.onunload=function(){null};
+    </script>
+
+</body>
+</html>

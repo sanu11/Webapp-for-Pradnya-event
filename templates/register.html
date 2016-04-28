@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/auth_styles.css' %}">
+	<script src="{% static 'js/check.js' %}"></script>  				
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+
+	<section id="authentication" class="cf">
+		<div class="wrapper">
+			<div class="column">
+				<h2 class="title">Register</h2>
+				<form action="/register/" method="post" id="register">
+					<div class="column" id="user1">	
+						User1
+						<input type="text" name="user1" id="user11" maxlength="15" required autocomplete="off" />
+					</div>
+					<div class="column" id="user2">
+						User2
+						<input type="text" name="user2" id="user22" maxlength="15" required autocomplete="off" />
+					</div>
+					College
+					<input type="text" name="college" id="clg" maxlength="20" required autocomplete="off" />
+					Mobile
+					<input type="number" name="phone" id="phone" min="7000000000" max="9999999999" required autocomplete="off" />
+					Email Address
+					<input type="email" name="email" id="email" maxlength="50" required autocomplete="off" />
+					Set A Password
+					<input type="password" name="password" id="password" maxlength="25" required autocomplete="off" />
+					Level
+					<select name="level">
+                        <option value="Junior">Junior</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                    <button type="button" onclick="register()" class="button button_highlight">Register</button>
+                </form>
+			</div>
+			<div class="column">
+				<h2 id="login_form_label" class="title">Login</h2>
+				<form  method="post" id="log">
+                    {% csrf_token %}
+					Email
+					<input type="email" name="email" required autocomplete="off" />
+					Password
+					<input type="password"  name="password" required autocomplete="off" />
+					<button type="button" onclick="login()" class="button button_highlight">Login</button>
+                </form>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

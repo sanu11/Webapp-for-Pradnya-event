@@ -1,0 +1,341 @@
+Timestamp,Enter your email,Question,Option 1,Option 2,Option 3,Option 4,Answer
+1/10/2016 1:52:47,sanikashah1110@gmail.com,"#include<stdio.h>
+int main()
+{
+	char *a=""Pradnya"";
+	char *b=""Pradnya"";
+	char c[]=""Hello"";
+	char d[]=""Hello"";
+	float x=0.7;
+	if(x!=0.7)
+		if(c==d)
+			printf(""IN 1"");
+		else 
+			printf(""IN 2"");
+	else
+		if(a==b)	
+			printf(""IN 3"");
+		else
+			printf(""IN 4"");
+	return 0;
+}",IN 1,IN 2,IN 3,IN 4,2
+1/10/2016 2:37:15,sanikashah1110@gmail.com,"#include <stdio.h>
+
+int main() 
+{
+        char a[6],b[6],c[5],d[10];
+        scanf(""%3s"",&a);
+        scanf(""%5s"",&b);
+        scanf(""%3s"",&c);
+        strcat(d,a);
+        strcat(d,c);
+        if(printf(""%s "",b)<=2)
+                printf(""%d"",strlen(c));
+        else
+                printf(""%d"",strlen(d));
+        return 0;
+}   //input given is Welcome to PICT",come 11,to 4,come 5,to 11,3
+1/10/2016 2:53:20,sanikashah1110@gmail.com,"#include <stdio.h>
+int main(void)
+{
+                  const char *a=""Pradnya"";
+                  char * const b=""Hello World"";
+                  char *c=""Hello"";
+                  a=c;
+/*1*/          *a=""PICT"";
+/*2*/          b=c;
+/*3*/         *b=""PICT"";
+/*4*/         return 0;
+}
+//Error on line",1 4,2 3,1 3,2 4,2
+1/10/2016 3:19:08,sanikashah1110@gmail.com,"#include <stdio.h>
+fun(int,int,int);
+int main(void)
+{
+int a=10,b=50,c=60;
+int x=fun(a,b,c);
+switch(x)
+{
+        printf(""HI"");
+        case 61:
+        print(""I"");
+        break;
+        case 62:
+        printf(""N"");
+        break;
+        case 71 :
+        printf(""C"");
+        break;
+        default :
+        printf(""Default"");
+}
+return 0;
+}
+fun(int x,int y,int z)
+{
+        return (z>=y>=x?++x + ++y : x++ + ++z);
+}
+",HI N,N,C ,Compile error,3
+1/11/2016 0:53:38,sanikashah1110@gmail.com,"#include <stdio.h>
+int fun();
+int fun3(int *a)
+{
+	int i;
+	for(i=0;i<-1[a];i++)
+	fun();
+}
+int fun2()
+{
+	static int a=10;
+	return a++;
+}
+int fun()
+{
+if(fun2()%2==0)
+printf(""hello "");
+else
+printf(""world"");
+}
+int main() 
+{
+int a[]={1,2,3,4,5};	
+fun3(a+2);
+	return 0;
+}
+",hello world,hello hello,no output,hello,3
+1/11/2016 0:54:35,sanikashah1110@gmail.com,"#include <stdio.h>
+int fun();
+int fun3(int *a)
+{
+	int i;
+	for(i=0;i<(-1)[a];i++)
+	fun();
+}
+int fun2()
+{
+	static int a=10;
+	return (a++,a++);
+}
+int fun()
+{
+if(fun2()%2==0)
+printf(""hello "");
+else
+printf(""world "");
+}
+int main() 
+{
+int a[]={1,2,3,4,5};	
+fun3(a+2);
+	return 0;
+}
+",no output,hello hello,hello world,world world,3
+1/11/2016 1:12:29,sanikashah1110@gmail.com,"#include<stdio.h>
+#define __sq__(x) x*x
+enum { a,b,c,d=5,e};
+int main() 
+{
+int i=-1,j=-2,k;
+k=++i&&++j||++j;
+if(j&&k)	
+printf(c+""HelloWorld %d "",__sq__(e+2));
+else
+printf(b+""Pict"",__sq__(a+3));
+return 0;
+}",oWorld 20,lloWorld 20 ,t 11,ict ,2
+1/12/2016 1:07:23,sanikashah1110@gmail.com,"#include <stdio.h>
+int main(void) 
+{
+	char *a,*b;
+	char d[]=""INDIA"",e[]=""ENGLAND"";
+	a=d;
+	b=e;
+	if(*a++=*b++) 
+	strcat(d,e);
+ 	else
+	 while(*a++=*b++);
+	printf(""%s"",d);
+return 0;
+}
+",ENDIAENGLAND,INDIAENGLAND,INDIA,ENIDA,1
+1/12/2016 1:47:42,sanikashah1110@gmail.com,"#include <stdio.h>
+int main() {
+static int i,j;
+int a[][3][2]={10,4,12,1,8,6,7,5,9,2,11,3};
+int k=*(*(*(a+1)+1));
+while(i<10,j<20)
+        {
+        i++;
+        j++;
+        }
+        k++;
+        if(j&k)
+        printf(""%o %x "",i,k);
+        else
+        printf(""%o %x "",k,i);
+        return 0;
+}
+",12 10,12 a,3 a,12 14,4
+1/14/2016 9:38:39,sanikashah1110@gmail.com,"#include <stdio.h>
+int main(void) 
+{
+char a[]=""PICT Pune"",b[]=""Hello World"";  
+int arr[] = {[4] = 10, [1] = 3, [2] = 5 };
+	scanf(""%*s %[^e]"",a,b);                   //input is Live and Let Live
+int k=strlen(a);
+int l=strlen(b);
+int i=0;
+int temp=k&arr[2];
+int temp2=l&arr[1];
+	printf(""%d"",temp|temp2);
+brk(0);
+}",1,6,7,,
+1/18/2016 22:31:39,sanikashah1110@gmail.com,"    #include <stdio.h>
+    int main()
+    {
+    int y, x = 5;
+	int array[][3] = { 0, 1, 2, 3, 4, 5 };
+    while( x --> 0 ); 
+    y=x--;
+    int k=abs(x)* *(*(array+1)+2);
+  	printf(""%d %d %d\n"", (int)pow(k,abs(x)), (6, array[0,1][1,2]), y);
+	brk(0);
+    }
+",100 6  -2,5  6   0,5   5   -1, 100 5 -1 ,4
+1/18/2016 22:55:13,sanikashah1110@gmail.com,"#include <stdio.h>
+int main()
+{
+int a[][3]={1,2,3,4,5,6,7,8,9};        
+int *ptr;
+int (*p)[3];
+p=a;
+p++;
+ptr=p;
+ptr++;
+int k=*(ptr+1)|*(ptr+3);
+printf(""%d"",k/ *(ptr+2));
+return 0;
+}
+",4,2,1,0,2
+1/18/2016 23:06:35,sanikashah1110@gmail.com,"#include <stdio.h>
+int main(void)
+{
+int x[]={4,7,8,9,2,1};
+int *p[5];
+p[0]=x;
+p[1]=(x+3);
+p[2]=(x+5);
+if( *p[2] == 8 );
+  *p[1] = 0; 
+if(*p[1]==9)
+*p[2]=2;
+else
+*p[2] += 2;
+printf(""%d"",*p[2]);
+	return 0;
+}
+",2,3,10,Error,2
+1/18/2016 23:27:40,sanikashah1110@gmail.com,"#include <stdio.h>
+#include<string.h>
+int main(void)
+{
+char a[]=""Hello World"",b[]=""Welcome to PICT"";
+char c[20];
+strncpy(c,a,6);
+strcat(c,strstr(b,""P""));
+int k=ceil(strlen(c)/4);
+printf(""%d"",k);
+	return 0;
+}
+",2,3,4,5,1
+1/19/2016 12:07:41,sanikashah1110@gmail.com,"#include <stdio.h>
+int main(void) 
+{
+int i=0;
+int array[] = { [0 ... 9] = 1, [10 ... 20] = 2, [30 ... 35] = 3, [35 ... 40]=4};
+int *x=array;
+int (*y)[4]=(array+20);
+int *q=y[2];
+q++;
+
+ *x =*x+*(q+1);
+ *(q+1) =*x-*(q+1);
+ *x =*x-*(q+1);
+q++;
+printf(""%d"",*x-*q); 
+return 0;
+}
+",6,3,2,-1,3
+1/21/2016 14:02:08,sanikashah1110@gmail.com,"#include <stdio.h>
+#include<string.h>
+int main() 
+{
+	struct xyz
+	{
+	int a:2;
+	int b:3;
+	int c:4;
+	};
+union abc 
+{
+	int a;
+	char c;
+};
+struct xyz p={2,5,12};
+union abc q;
+q.a=65;
+q.c='D';
+printf(""%c %c"",(q.a+p.a),(q.c-p.b));
+return 0;
+}",G A,G B,C B,B G,4
+1/21/2016 22:55:47,sanikashah1110@gmail.com,"#include<stdio.h>
+int main()
+{
+char (*b)[4];	
+char *a[3]={""Elephant"",""Lions"",""Tiger"",""Cheetah""};
+b=a[1];	
+b++;
+char *f=b;
+f+=4;
+printf(""%s\n"",f);
+}
+",Tiger,iger,ger,r,3
+1/21/2016 22:57:15,sanikashah1110@gmail.com,"#include<stdio.h>
+int main()
+{
+char i='\0';
+for((i+=512)&&(i<=520);i++;i>0)
+printf(""%d\n"",i);
+	return 0;
+}
+",Infinte loop,No Output,Syntax error,513 514 515 516 ... 521,2
+1/21/2016 22:58:41,sanikashah1110@gmail.com,"#include<stdio.h>
+int main()
+{
+char (*temp)[4];
+char a[]=""%google.com%olacab%d%%%cab"";
+temp=strstr(a,""cab"");
+temp--;
+int x=10;
+char z='ABC';
+char str[10]="""";
+strcpy(str,temp);
+printf(str,x,z,z);
+brk(0);
+}",12lacab67%Cab,acab10%Aab,acab10%%Cab,10lacab67%Cab,1
+1/21/2016 23:00:29,sanikashah1110@gmail.com,"#include<stdio.h>
+int main(int argc,char *argv[])
+{
+	printf(""%s %c %s \n"",*argv,*(*argv++),*++argv);
+}
+// argument given is College Life",./a.out . Life,Life C College ,Life L College,./a.out C Life,2
+1/22/2016 17:24:10,sanikashah1110@gmail.com,"#include<stdio.h>
+#define int char
+main()
+{
+int i='a';
+for(;i<'A'+'A';i++)
+printf(""%d "",i);
+}
+
+",97 98 99.... 129,65 66 67 .... 193,Error,None of these ,4

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Leaderboard</title>
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'css/leaderboard_styles.css' %}">
+</head>
+<body>
+	
+	<section id="leaderboard" class="cf">
+		<div class="wrapper">
+			<h1 class="title">Leaderboard</h1>
+			<div class="column">
+				<h2 class="subtitle">Junior Group</h2>
+				<table class="table">
+					<tr>
+						<th>#</th>
+						<th>Username</th>
+						<th>Score</th>
+					</tr>
+					{% for user in junior_list %}
+					<tr>
+						<td>{{forloop.counter}}</td>
+						<td>{{user.user1}}</td>
+						<td>{{user.score}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			<div class="column">
+				<h2 class="subtitle">Senior Group</h2>
+				<table class="table">
+					<tr>
+						<th>#</th>
+						<th>Username</th>
+						<th>Score</th>
+					</tr>
+					{% for user in senior_list %}
+					<tr>
+						<td>{{forloop.counter}}</td>
+						<td>{{user.user1}}</td>
+						<td>{{user.score}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			<div class="row">
+				<a href="/" id="btnHome" class="button button_highlight">Go To Home Page</a>
+			</div>
+		</div>	
+	</section>
+
+</body>
+</html>

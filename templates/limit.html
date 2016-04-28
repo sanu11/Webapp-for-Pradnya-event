@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contest Over</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+	
+	<section id="logout">
+		<div class="wrapper">
+			<center>
+				<h1 class="logout_text">You have attempted all questions ! Thank You :)</h1>
+				<h2>Score = {{score}}</h2><span style="margin-left:3rem;"></span><h2>Percentage = {{percent}}</h2>
+				<button  name ="Log In" class="button button_highlight" onclick="window.location.href='/leaderboard'">Leaderboard</button>
+			</center>
+		</div>
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logout</title>
+
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+	
+	<section id="logout">
+		<div class="wrapper">
+			<center>
+				<h2 class="logout_text">You Have Been Successfully Logged Out</h1>
+				<h1 class="logout_score">Your Score : {{score}}</h1>
+				<button  name ="Log In" class="button button_highlight" onclick="window.location.href='/leaderboard'">Leaderboard</button>
+			</center>
+		</div>
+	</section>
+
+</body>
+
+</html>
