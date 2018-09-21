@@ -1,3 +1,2 @@
-#Pradnya_2016
-Web-app for c/cpp mcqs made in Django <br>
+#Web-app for C/C++ Mcqs made in Django <br>
 Sqlite is used as Database <br>
