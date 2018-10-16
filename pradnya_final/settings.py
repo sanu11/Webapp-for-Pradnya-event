@@ -11,14 +11,11 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-import django_heroku
+
 # -----------------push to heroku---------------
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
