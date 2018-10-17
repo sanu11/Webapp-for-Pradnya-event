@@ -14,8 +14,8 @@ import os
 
 
 # ----------------heroku push
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
 
 
 
@@ -89,9 +89,11 @@ WSGI_APPLICATION = 'pradnya_final.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# --------comment this for pushing to heroku--------
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3', 
+#          'NAME': os.path.join(BASE_DIR, 'sanika.db'),
 #         #'NAME': 'pradnya',
 #         #'USER': 'root',
 #         #'PASSWORD': 'root',
@@ -99,6 +101,8 @@ WSGI_APPLICATION = 'pradnya_final.wsgi.application'
 #         #'PORT': '3306',
 #     }
 # }
+
+# ----------------------
 
 
 # Password validation
