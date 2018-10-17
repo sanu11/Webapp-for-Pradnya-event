@@ -13,20 +13,43 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 
-# ----------------heroku push
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
+# ----------------heroku push----------------------------
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
 
 
 
-DATABASES={}
-# Parse database configuration from $DATABASE_URL
-DATABASES['default'] = dj_database_url.config()
+# DATABASES={}
+# # Parse database configuration from $DATABASE_URL
+# DATABASES['default'] = dj_database_url.config()
 
-# -----------------
+# ---------------------------------------------------------------------
+
+
+# Database  --- for local use
+# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# --------comment this for pushing to heroku--------
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', 
+         'NAME': os.path.join(BASE_DIR, 'sanika.db'),
+        #'NAME': 'pradnya',
+        #'USER': 'root',
+        #'PASSWORD': 'root',
+        #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        #'PORT': '3306',
+    }
+}
+
+
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -86,21 +109,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pradnya_final.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-# --------comment this for pushing to heroku--------
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', 
-#          'NAME': os.path.join(BASE_DIR, 'sanika.db'),
-#         #'NAME': 'pradnya',
-#         #'USER': 'root',
-#         #'PASSWORD': 'root',
-#         #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-#         #'PORT': '3306',
-#     }
-# }
 
 # ----------------------
 
