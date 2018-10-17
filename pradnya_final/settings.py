@@ -12,6 +12,19 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
+
+# ----------------heroku push
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+
+
+
+DATABASES={}
+# Parse database configuration from $DATABASE_URL
+DATABASES['default'] = dj_database_url.config()
+
+# -----------------
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,16 +88,16 @@ WSGI_APPLICATION = 'pradnya_final.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', 
-        #'NAME': 'pradnya',
-        #'USER': 'root',
-        #'PASSWORD': 'root',
-        #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        #'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3', 
+#         #'NAME': 'pradnya',
+#         #'USER': 'root',
+#         #'PASSWORD': 'root',
+#         #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         #'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
